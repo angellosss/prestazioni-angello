@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prestazioni Odontoiatriche</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Prestazioni Odontoiatriche</h1>
+        
+        <form id="entryForm">
+            <label>
+                Data:
+                <input type="date" id="data" required />
+            </label>
+
+            <label>
+                Studio:
+                <select id="studio" required>
+                    <option value="Dental Desi">Dental Desi</option>
+                    <option value="Obiettivo Sorriso">Obiettivo Sorriso</option>
+                </select>
+                <button type="button" id="addStudioBtn" title="Aggiungi studio">+</button>
+            </label>
+
+            <label>
+                Nome Paziente:
+                <input type="text" id="paziente" required />
+            </label>
+
+            <label>
+                Prestazione:
+                <input type="text" id="prestazione" required />
+            </label>
+
+            <label>
+                Costo (€):
+                <input type="number" id="costo" min="0" step="0.01" required />
+            </label>
+
+            <label>
+                % Retribuzione:
+                <input type="number" id="percentuale" min="0" max="100" step="0.1" required />
+            </label>
+
+            <label>
+                Guadagno (€):
+                <input type="number" id="guadagno" readonly />
+            </label>
+
+            <label>
+                Nota:
+                <input type="text" id="nota" />
+            </label>
+
+            <div class="buttons">
+                <button type="submit" id="addBtn">Aggiungi</button>
+                <button type="button" id="modifyBtn" disabled>Modifica</button>
+                <button type="button" id="cancelEditBtn" hidden>Annulla</button>
+            </div>
+        </form>
+
+        <section class="table-section">
+            <h2>Prestazioni inserite</h2>
+            <table id="prestazioniTable">
+                <thead>
+                    <tr>
+                        <th>Pagata</th>
+                        <th>Data</th>
+                        <th>Studio</th>
+                        <th>Nome Paziente</th>
+                        <th>Prestazione</th>
+                        <th>Costo (€)</th>
+                        <th>% Retribuzione</th>
+                        <th>Guadagno (€)</th>
+                        <th>Nota</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- righe inserite qui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="summary-section">
+            <h2>Riepilogo Mensile</h2>
+            <label>
+                Seleziona mese:
+                <input type="month" id="meseSelezionato" />
+            </label>
+            <div id="riepilogoGuadagni">Guadagno totale: €0.00</div>
+            <button id="exportBtn">Esporta in Excel</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
